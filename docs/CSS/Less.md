@@ -1,25 +1,7 @@
----
-title: less预处理语言
-date: 2019-01-25 13:51:01
-tags: less
-categories: [学习笔记,预处理语言]
----
-Lass、
-<!-- more -->
-
-## Less开始
-- Koala自动监视编译
-- webpack/FIS
-- less2css&&Lessc-->subllime
-- less.min.js
-
-### 作用
 - 复用,减少冗余
-
 ## 变量-Variables
 - 只可定义一次
 - @开头定义变量,使用时直接键入@名称
-
 ### 值变量
 ```less
 @width: 10px;
@@ -35,7 +17,6 @@ Lass、
   height: 20px;
 }
 ```
-
 ### 选择器变量
 ```less
 @{mySelector}{....} //给选择器赋值
@@ -68,7 +49,6 @@ Lass、
       }
         color:#666;
 ```
-
 ### 属性变量
 ```less
  @borderStyle: border-style;
@@ -83,7 +63,6 @@ Lass、
         border-style:solid;
       }
 ```
-
 ### url变量
 项目结构改变时，修改其变量即可。
 ```less

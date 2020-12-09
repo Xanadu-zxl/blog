@@ -1,26 +1,15 @@
----
-title: cssWorld
-date: 2018-12-20 20:46:38
-tags: CSS
-categories: [学习笔记,CSS]
----
-CSS 救救我~
-<!-- more -->
-
 ## 3.1块级元素
-
  - 由于“块级元素”具有换行特性，因此理论上它都可以配合 clear 属性来清除浮动带来的影响
  - `<div>,<li>,<table>`:符合块级元素的基本特征，也就是一个水平流上只能单独显示一个元素，多个块级元素则换行显示。
 
 ## 3.2.1 width:auto
-
  1. 100%于父级宽度
  2. 包裹性
  3. 收缩到最小:min-content
  4. 超出容器限制:设置white-space:nowrap;属性后--无视父级宽度,叫做max-content;
  **无宽度 流体布局**
  *宽度分离
-## box-sizing
+### box-sizing
  *box-sizing>> 原生普通文本框`<input>`和文本域`<textarea>`
  *box-sizing 被发明出来最大的初衷应该是解决替换元素宽度自适应问
 ``` css
@@ -29,7 +18,6 @@ box-sizing: border-box;
 }
 ```
 ## 3.2.6 height:auto
-
 使元素支持height:100%;效果
  1. 设定显示高度
  2. 使用绝对定位
@@ -37,7 +25,6 @@ box-sizing: border-box;
 在于绝对定位的宽高百分比计算是相对于 padding box 的，也就是说会把 padding 大小值计算在内，但是，非绝对定位元素则是相对于 content box 计算的
 
 ## 3.3 min,max--width--height:
-
  - min-width/max-width 出现的场景一定是自适应布局或者流体布局中;
    尺寸会有大有小，为了避免图片在移动端展示过大影响体验，常常会有下面的 max-width 限制：
 ```css
@@ -51,6 +38,5 @@ box-sizing: border-box;
  - min-width和min-height的初始值是auto
  - 超越最大!important max-width会覆盖width
  - 最小宽度大于最大宽度最小宽度胜利;
- 
 ### 3.3.4 任意高度元素的展开收起动画技术
 

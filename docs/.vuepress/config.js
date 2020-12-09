@@ -22,11 +22,16 @@ module.exports = {
     },
     sidebar: [
       {
+        title: 'HTML ✨',
+        children: [['HTML/HTML.md', '再学HTML']],
+      },
+
+      {
         title: 'CSS ⌨️',
         children: [
-          ['CSS/cssWorld.md', '📏 CSS世界'],
-          ['CSS/cssBasis.md', '📏 CSS知多少丶'],
-          ['CSS/Less.md', '📏 Less'],
+          ['CSS/css.md', 'CSS基础'],
+          ['CSS/cssWorld.md', 'CSS世界'],
+          ['CSS/Less.md', 'Less'],
         ],
       },
       {
@@ -34,8 +39,7 @@ module.exports = {
         path: '/JavaScript/',
         sidebarDepth: 2, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
         children: [
-          ['JavaScript/Ajax-Json.md', '🍦 AJ'], //菜单名称为'Ajax-Json'，跳转至/pages/JavaScript/Ajax-Json.md
-          ['JavaScript/Arrow.md', '🍦 箭头函数'],
+          //菜单名称为'Ajax-Json'，跳转至/pages/JavaScript/Ajax-Json.md
           ['JavaScript/ES6.md', '🍦 ES6'],
           ['JavaScript/JavaScript.md', '🍦 JS基础丶'],
           ['JavaScript/Jquery.md', '🍦 Jquery'],
@@ -44,6 +48,10 @@ module.exports = {
           ['JavaScript/JS_Object.md', '🍦 JS面向对象'],
           ['JavaScript/JS_RegExp.md', '🍦 JS正则'],
         ],
+      },
+      {
+        title: '其他 🔧',
+        children: [['other/cache.md', '从输入URL到展现涉及哪些缓存环节']],
       },
     ],
   },

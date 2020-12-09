@@ -1,11 +1,3 @@
----
-title: Ajax-Json
-date: 2018-12-13 22:15:15
-tags: AJAX
-categories: [学习笔记,AJAX]
----
-数据传输
-<!-- more -->
 # AJAX
 ## 什么是AJAX
  - **Ajax**它向服务器发出异步请求以传输数据，然后将返回的数据加载到页面中。
@@ -18,13 +10,12 @@ categories: [学习笔记,AJAX]
 **AJAX是基于现有的Internet标准**
 并且联合使用它们：
 
-``` gcode
+```
 XMLHttpRequest 对象 (异步的与服务器交换数据)
 JavaScript/DOM (信息显示/交互)
 CSS (给数据定义样式)
 XML (作为转换数据的格式)
 ```
-
 ## AJAX创建 XMLHttpRequest 对象
  - XMLHttpRequest 对象用于在后台与服务器交换数据
 创建 XMLHttpRequest 对象的语法
@@ -45,7 +36,7 @@ else
 ## AJAX向服务器发送请求请求
 向服务器发送请求:
  - 如需将请求发送到服务器，我们使用 XMLHttpRequest 对象的 open() 和 send() 方法：
-``` sml
+``` js
 xmlhttp.open("GET","ajax_info.txt",true);
 xmlhttp.send();
 ```
@@ -67,25 +58,25 @@ xmlhttp.send();
  - 发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
 
 ### GET 请求一个简单的 GET 请求：
-``` sml
+``` js
 xmlhttp.open("GET","/try/ajax/demo_get.php",true);
 xmlhttp.send();
 ```
  - 在上面的例子中，您可能得到的是缓存的结果。
  - 为了避免这种情况，请向 URL 添加一个唯一的 ID：
-``` sml
+``` js
 xmlhttp.open("GET","/try/ajax/demo_get.php?t=" + Math.random(),true);
 xmlhttp.send();
 ```
  - 如果您希望通过 GET 方法发送信息，请向 URL 添加信息：
-``` sml
+``` js
 xmlhttp.open("GET","/try/ajax/demo_get2.php?fname=Henry&lname=Ford",true);
 xmlhttp.send();
 ```
 
 ### POST 请求
 实例
-``` sml
+``` js
 xmlhttp.open("POST","/try/ajax/demo_post.php",true);
 xmlhttp.send();
 ```
@@ -94,7 +85,7 @@ xmlhttp.send();
  - 请使用 setRequestHeader() 来添加 HTTP 头。
  - 然后在 send()方法中规定您希望发送的数据：
 
-``` sml
+``` js
 xmlhttp.open("POST","/try/ajax/demo_post2.php",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send("fname=Henry&lname=Ford");
@@ -114,7 +105,7 @@ value: 规定头的值
 **url-服务器上的文件**
 
  - open() 方法的 url 参数是服务器上文件的地址：
-``` sml
+``` js
 xmlhttp.open("GET","ajax_test.html",true);
 ```
 该文件可以是任何类型的文件，比如 .txt 和 .xml，或者服务器脚本文件，比如 .asp 和 .php （在传回响应之前，能够在服务器上执行任务）
@@ -124,7 +115,7 @@ AJAX 指的是异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。
 
  - XMLHttpRequest 对象如果要用于 AJAX 的话，其 open() 方法的 async 参数必须设置为 true：
 
-``` sml
+``` js
 xmlhttp.open("GET","ajax_test.html",true);
 ```
 通过 AJAX，JavaScript 无需等待服务器的响应，而是：
@@ -143,27 +134,24 @@ xmlhttp.onreadystatechange=function()
     }
 }
 xmlhttp.open("GET","/try/ajax/ajax_info.txt",true);
-```
-
-
 xmlhttp.send();
+```
 
 #### Async = false
 如需使用 async=false，请将 open() 方法中的第三个参数改为 false：
-``` sml
+``` js
 xmlhttp.open("GET","test1.txt",false);
 ```
-我们不推荐使用 **async=false**，但是对于一些小型的请求，也是可以的。
+不推荐使用 **async=false**，但是对于一些小型的请求，也是可以的
  - 请记住，JavaScript 会等到服务器响应就绪才继续执行。如果服务器繁忙或缓慢，应用程序会挂起或停止。
  - **注意：**当您使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send()
    语句后面即可：
 
-``` sml
+``` js
 xmlhttp.open("GET","/try/ajax/ajax_info.txt",false);
 xmlhttp.send();
 document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 ```
-
 ## AJAX - 服务器响应
 ### 服务器响应
 如需获得来自服务器的响应，请使用 XMLHttpRequest 对象的 **responseText** 或 **responseXML** 属性。
@@ -175,11 +163,8 @@ document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 ``` stylus
 document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 ```
-
-
 #### responseXML 属性
  - 来自服务器的响应是 XML，而且需要作为 XML 对象进行解析，请使用 responseXML 属性
-
 ``` stylus
 实例
 请求 cd_catalog.xml 文件，并解析响应：
@@ -193,8 +178,6 @@ for (i=0;i<x.length;i++)
 }
 document.getElementById("myDiv").innerHTML=txt;
 ```
-
-
 ## AJAX - onreadystatechange 事件
  - 浏览器和服务器之间传输的数据通常使用一种叫 **JSON**（JavaScript Object Notation）的格式。JSON 类似于 JavaScript 的对象字面量语法，只是它是以字符串的形式传输，一旦接收，就可以将其转换成对象在脚本中使用。
  - 异步能在多方面提升用户的体验，由于浏览器不用在渲染页面的时候等待服务器做出响应，因而页面的加载速度更快。请求和传输都在后台进行，不会中断用户当前的操作。当浏览器接受到新的数据的时候，只有特定的区域会刷新，这些特性很大程度上增强了单页应用程序的用户体验。

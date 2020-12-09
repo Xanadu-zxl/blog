@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.jpg
 actionText: 芝麻开门 →
-actionLink: /JavaScript/JavaScript
+actionLink: /CSS/
 features:
 - title: 📟
   details: Good Good Study、Day Day Up
